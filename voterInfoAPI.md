@@ -1,3 +1,5 @@
+> [!WARNING]
+> This document is in a test/draft state and may not be accurate.
 # CTCL Voter Info API Reference (BIP)
 This endpoint returns information about contests and candidates in a particular election. Note that the CTCL API is largely a clone of the [Google Civic Info API's voterInfoQuery](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery). 
 
@@ -39,7 +41,7 @@ Note that the CTCL does **not** return the following properties that are include
 - `contests[].candidates[].orderOnBallot`
 
 The CTCL API **does** return: 
-[`kind`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#kind), [election](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#election), [normalizedInput](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#normalizedInput), and [contests](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests). 
+[`kind`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#kind), [`election`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#election), [`normalizedInput`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#normalizedInput), and [`contests`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests). 
 ### Additional Properties
 The CTCL Voter Info API returns one additional property not found in the Google Civic Info API: the `ctcl` object. Please note: the stability of this property beyond 2023 is not guaranteed. This object is returned with every candidate contest and includes the following key-value pairs:
 | Property name (in contests[].ctcl) | Required | CTCL BIP Candidate Schema |
