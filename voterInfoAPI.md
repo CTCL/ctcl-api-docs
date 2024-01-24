@@ -44,10 +44,10 @@ The CTCL API **does** return:
 [`kind`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#kind), [`election`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#election), [`normalizedInput`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#normalizedInput), and [`contests`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests). 
 ### Additional Properties
 The CTCL Voter Info API returns one additional property not found in the Google Civic Info API: the `ctcl` object. Please note: the stability of this property beyond 2023 is not guaranteed. This object is returned with every candidate contest and includes the following key-value pairs:
-| Property name (in contests[].ctcl) | Required | CTCL BIP Candidate Schema |
+| Property name (in `contests[].ctcl`) | Required? | Link to CTCL BIP Candidate Schema |
 | --- | --- | --- |
-| `voteVariation` | true | Vote Variation |
-| `districtRollup` | false (this property is only included if "true" and is otherwise omitted) | N/A: this indicates that sub-district shapes are not available, and the jurisdiction OCDID is being returned as the contest OCDID |
+| `voteVariation` | yes | [Vote Variation](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.40c202ycrdz0) |
+| `districtRollup` | no (this property is only included if "true" and is otherwise omitted) | N/A: this indicates that sub-district shapes are not available, and the jurisdiction OCDID is being returned as the contest OCDID |
 
 
 ### Candidate Contest Field Map
@@ -58,27 +58,27 @@ Please note that this list only contains property names that are ambiguous/not a
 
 | API Returns (link to Google API Docs) | CTCL BIP Candidate Schema |
 | --- | --- |
-| `contests[].office` | Office Name |
-|`contests[].district.name`|Electoral District|
-|`contests[].district.id`|Electoral District OCDID|
-|`contests[].candidates[].name`|Candidate Name|
-|`contests[].candidates[].party`|Candidate Party Registration|
-|`contests[].candidates[].candidateUrl`|Website (Campaign)|
+| [`contests[].office`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.office) | [Office Name](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.eoa33qqtge25) |
+|[`contests[].district.name`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.district.name)|[Electoral District](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.wks9tmkpua5v)|
+|[`contests[].district.id`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.district.id)|[Electoral District OCDID](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.nj0g9by27xah)|
+|[`contests[].candidates[].name`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.candidates.name)|[Candidate Name](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.qelz6zoyoim)|
+|[`contests[].candidates[].party`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.candidates.party)|[Candidate Party Registration](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.af9tuwmoyooe)|
+|[`contests[].candidates[].candidateUrl`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.candidates.candidateUrl)|[Website (Campaign)](https://docs.google.com/document/d/1CstQFkReE5ikYeb1wHQSgcp71Zo9cxTKrMBRct8QACY/edit#bookmark=kix.60ncqftnd02i)|
 
 
 ### Ballot Measure Field Map
-Ballot measures are returned as contests from this same endpoint with a contest type "Referendum." This section contains a complete list of returned properties and their associated entry in the CTCL BIP Ballot Measure Schema.
+Ballot measures are returned as contests from this same endpoint with a contest type "Referendum." This section contains a complete list of returned properties and their associated entry in the [CTCL BIP Ballot Measure Schema](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit?usp=sharing).
 | API Returns (link to Google API Docs) | CTCL BIP Ballot Measure Schema |
 | --- | --- |
-|`contests[].referendumTitle`|Title|
-|`contests[].referendumSubtitle`|Subtitle|
-|`contests[].referendumUrl`|Info URL|
-|`contests[].referendumBrief`|Brief|
-|`contests[].referendumText`|Full Text|
-|`contests[].referendumProStatement`|Pro Statement|
-|`contests[].referendumConStatement`|Con Statement|
-|`contests[].referendumPassageThreshold`|Amount to Pass|
-|`contests[].referendumEffectOfAbstain`|Abstain Effect|
-|`contests[].referendumBallotResponses[]`|[Yes Response, No Response]|
+|[`contests[].referendumTitle`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumTitle) | [Title](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.vehhonaie97w) |
+|[`contests[].referendumSubtitle`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumSubtitle) | [Subtitle](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.id7rnt8cie0w) |
+|[`contests[].referendumUrl`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumUrl) | [Info URL](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.lbs5zmevq694) |
+|[`contests[].referendumBrief`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumBrief) | [Brief](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.l8dl8loybijf) |
+|[`contests[].referendumText`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumText) | [Full Text](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.gg6vugcfdd01) |
+|[`contests[].referendumProStatement`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumProStatement) | [Pro Statement](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.u5owrn90875g) |
+|[`contests[].referendumConStatement`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumConStatement) | [Con Statement](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.abdauvtf2g5v) |
+|[`contests[].referendumPassageThreshold`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumPassageThreshold) | [Amount to Pass](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.yv80ox7iobn) |
+|[`contests[].referendumEffectOfAbstain`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumEffectOfAbstain) | [Abstain Effect](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.h1a44k1re0ak) |
+|[`contests[].referendumBallotResponses[]`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests.referendumBallotResponses) | [[`Yes Response`](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.v1ofk9g65npp), [`No Response`](https://docs.google.com/document/d/1KNZEBUywTyKoIu9voGoSNy6kIlI5u_NFEbwSvMS56e4/edit#bookmark=kix.yfwypj5eppgn)] |
 
 
