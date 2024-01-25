@@ -12,7 +12,7 @@ To request elections data, make a GET request to CTCL's elections endpoint:
 - **`key` (string)**: your API key. If you do not have an API key, contact hello@techandciviclife.org
 ### Optional parameters:
 - **`address` (string)**: when provided, the API response will be limited to elections whose geographies overlap with the provided address. 
-    - *Note: if  an address parameter is provided but is unable to be geocoded, an error is returned with code 400 and a reason of "parseError" as described in the [Google Civic Info API error reference here](https://developers.google.com/civic-information/docs/v2/errors). *
+    - *Note: if  an address parameter is provided but is unable to be geocoded, an error is returned with code 400 and a reason of "parseError" as described in the [Google Civic Info API error reference here](https://developers.google.com/civic-information/docs/v2/errors).*
 
 ## Response
 The following is a truncated response to a GET query made to `http://api.ballotinfo.org/elections?key=abcdefghijklmnop` (no address provided):
