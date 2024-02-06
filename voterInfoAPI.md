@@ -39,6 +39,7 @@ Note that the CTCL does **not** return the following properties that are include
 - `precinctId`
 - `segments`
 - `contests[].candidates[].orderOnBallot`
+- `contests[].electorateSpecifications`
 
 The CTCL API **does** return: 
 [`kind`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#kind), [`election`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#election), [`normalizedInput`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#normalizedInput), and [`contests`](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery#contests). 
